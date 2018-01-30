@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 $access_token = '0iOxPtS6sadBbya87fY9gjqKbryUsww3exDlCcs3/JslnYee++cYoUcGxYZXNDRXydEORk50Tr45E84cAaW0C1vD8svFx/SeHYRAy0QZESsGpSylSAxkcmBQh1TSuouO9+vFXygtsR8nTCJ/xqvcVQdB04t89/1O/w1cDnyilFU=';
 
 // Get POST body content
@@ -19,7 +19,7 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
-				'text' => $text+'????'
+				'text' => 'แกนั่นแหละ'.$text.
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
