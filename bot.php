@@ -18,8 +18,10 @@ if (!is_null($events['events'])) {
 			
 			
 			// Build Manual Text Myself
-			if($text contains '@TestBOT'){
+			if(strpos($text, 'BOT') !== false){
 				$text = 'แกนั่นแหละ' . $text
+			}
+			
 			
 
 			// Build message to reply back
@@ -27,6 +29,8 @@ if (!is_null($events['events'])) {
 				'type' => 'text',
 				'text' => $text
 			];
+			
+
 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
@@ -47,8 +51,6 @@ if (!is_null($events['events'])) {
 			curl_close($ch);
 
 			echo $result . "\r\n";
-			
-			}
 		}
 	}
 }
