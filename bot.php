@@ -16,11 +16,18 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
+			if(strpos($text, 'TestBOT') !== false){
+			$messages = [
+				'type' => 'text',
+				'text' => 'แกนั่นแหละ' . str_replace("TestBOT","",$text)
+			];
+			}else{
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
 				'text' => 'แกนั่นแหละ' . $text
 			];
+			}
 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
